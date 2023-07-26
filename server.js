@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('jojo do DevOps testando aqui '-'');
+  res.send('jojo do DevOps testando aqui');
 });
 
 app.get('*', (req, res) => {
