@@ -1,18 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dockercami
-  namespace: default
+  name: minha-aplicacao
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      dockercami: web
+      app: minha-aplicacao
   template:
     metadata:
       labels:
-        dockercami: web
+        app: minha-aplicacao
     spec:
       containers:
-      - name: dockercami
-        image: camillamartins/dockernode
+        - name: minha-aplicacao
+          image: gcr.io/gin-tarefas/cicd-prod:latest
+          ports:
+            - containerPort: 8080
